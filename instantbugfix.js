@@ -14,36 +14,43 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+$(document).ready(function () {
+    $(window).resize(function () {
 
-$(document).ready(function() {
-    $(window).resize(function(){
+        $('#bugfix').css({
+            position: 'absolute',
+            left: ($(window).width() - $('#bugfix').outerWidth()) / 2,
+            top: ($(window).height() - $('#bugfix').outerHeight()) / 2
+        });
 
-    $('.instantbugfix').css({
-        position:'absolute',
-        left: ($(window).width() - $('.instantbugfix').outerWidth())/2,
-        top: ($(window).height() - $('.instantbugfix').outerHeight())/2
+
     });
 
-});
 
-// To initially run the function:
-$(window).resize();
-
-$("#navhead").click(function() {
-    if ($("#navcontent").css("display") == "none") {
-    $("#navcontent").css({display: "block", right: "25px"});
-    $("#navcontent").animate({right:  "5px"}, 400);
-} else {
-    $("#navcontent").css({display: "none"});
-}
-});
-
-$("#navcontent ul li a").click(function() {
+    $(window).resize();
     
-    $("#bugfix p").html("You cannot return flase");
-    
-    //$(this).html()
-    history.pushState(null, "contact", "/contact");
-})
-})
+    // To initially run the function:
+    $("#navhead").click(function () {
+        if ($("#navcontent").css("display") == "none") {
+            $("#navcontent").css({
+                display: "block",
+                right: "25px"
+            });
+            $("#navcontent").animate({
+                right: "5px"
+            }, 400);
+        } else {
+            $("#navcontent").css({
+                display: "none"
+            });
+        }
+    });
 
+    $("#navcontent ul li a").click(function () {
+
+        $("#bugfix p").html("You cannot return flase");
+
+        //$(this).html()
+        history.pushState(null, "contact", "/contact");
+    })
+})
