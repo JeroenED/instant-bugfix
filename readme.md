@@ -5,7 +5,7 @@ Instant Bugfix solves all your codeproblems in one click or tab.
 
 Actually it's just outputting a common codeproblem like:
 
-> You cannot return flase
+> Is that an infinite loop?
 
 Current development state
 ----
@@ -25,3 +25,7 @@ Use sources
 ----
 * [jQuery](http://www.jquery.com)
 * [Spoon Library](http://www.spoon-library.com/)
+
+Credits
+----
+* Original idea appeared on http://www.instantbugfix.com
