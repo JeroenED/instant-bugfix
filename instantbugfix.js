@@ -16,11 +16,12 @@
  */
 $(document).ready(function () {
     $(window).resize(function () {
-
+        
         $('#bugfix').css({
             position: 'absolute',
-            left: ($(window).width() - $('#bugfix').outerWidth()) / 2,
-            top: ($(window).height() - $('#bugfix').outerHeight()) / 2
+            left: 0,
+            top: ($(window).height() - $('#bugfix').outerHeight()) / 2,
+            width: $(window).width()
         });
 
 
