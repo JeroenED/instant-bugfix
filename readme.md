@@ -11,8 +11,8 @@ Current development state
 ----
 
 * ~~Planning~~
-* *Creating design*
-* Development
+* ~~Creating design~~
+* *Development*
 * Testing
 * Deployment
 
