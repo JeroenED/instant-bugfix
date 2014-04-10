@@ -26,6 +26,16 @@ CREATE TABLE ibf_fixes(
 	CONSTRAINT		fixPK		PRIMARY KEY (fixID)
 );
 
+INSERT INTO ibf_fixes (fix) VALUES ('Have you tried turning it off and on again?');
+INSERT INTO ibf_fixes (fix) VALUES ('Get a couple of beers and try again tommorow');
+INSERT INTO ibf_fixes (fix) VALUES ('You cannot return flase');
+INSERT INTO ibf_fixes (fix) VALUES ('Is that an infinite loop?');
+INSERT INTO ibf_fixes (fix) VALUES ('Private properties are private');
+INSERT INTO ibf_fixes (fix) VALUES ('Sorry, I don\'t understand that thing');
+INSERT INTO ibf_fixes (fix) VALUES ('Void methods are not supposed to return string');
+INSERT INTO ibf_fixes (fix) VALUES ('You cannot expect responses from a server which is not running');
+INSERT INTO ibf_fixes (fix) VALUES ('Executing that script requires permission');
+
 CREATE TABLE ibf_revisions(
 	revID		int				NOT NULL	AUTO_INCREMENT,
 	pageslug	varchar(25)		NOT NULL,
