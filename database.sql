@@ -32,7 +32,7 @@ INSERT INTO ibf_fixes (fix) VALUES ('You cannot return flase');
 INSERT INTO ibf_fixes (fix) VALUES ('Is that an infinite loop?');
 INSERT INTO ibf_fixes (fix) VALUES ('Private properties are private');
 INSERT INTO ibf_fixes (fix) VALUES ('Sorry, I don\'t understand that thing');
-INSERT INTO ibf_fixes (fix) VALUES ('Void methods are not supposed to return string');
+INSERT INTO ibf_fixes (fix) VALUES ('Void methods are not supposed to return strings');
 INSERT INTO ibf_fixes (fix) VALUES ('You cannot expect responses from a server which is not running');
 INSERT INTO ibf_fixes (fix) VALUES ('Executing that script requires permission');
 

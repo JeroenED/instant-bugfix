@@ -33,11 +33,15 @@ class init {
     public $working_dir;
     
     public function __construct() {
-        $working_dir = $this->get_working_directory();
+        $this->working_dir = $this->get_working_directory();
     }
     
     public function get_working_directory() {
-        return $_SERVER['SCRIPT_FILENAME'];
+        $value = $_SERVER['PHP_SELF'];
+        $value = explode('/', $value);
+        unset($value[count($value)-1]);
+        $value = implode('/', $value);
+        return $value . '/';
     }
     
 }
