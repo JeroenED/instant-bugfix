@@ -1,4 +1,4 @@
 Options -indexes
 
 RewriteEngine On 
-RewriteRule . index.php
+RewriteRule . index.php [QSA]
