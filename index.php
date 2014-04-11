@@ -26,22 +26,49 @@ set_include_path(get_include_path() . PATH_SEPARATOR . PATH_LIBRARY);
 // require spoon
 require_once 'spoon/spoon.php';
 $site = new init();
-echo $site->working_dir;
+echo "working-dir: " . $site->get_working_directory() . "<br>";
+echo "controller: " . $site->get_controller() . "<br>";
+echo "method: " . $site->get_method() . "<br>";
+echo "id: " . $site->get_id() . "<br>";
+
 
 class init {
     
     public $working_dir;
+    public $controller = "homeClass";
+    public $method = "index";
+    public $id = "0";
     
     public function __construct() {
         $this->working_dir = $this->get_working_directory();
+        $this->controller = $this->get_controller();
+        $this->method = $this->get_method();
+        $this->id = $this->get_id();
+    }
+    
+    public function get_controller() {
+        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $r_value = (isset($query_array[1])) ? $query_array[1] : "homeClass";
+        return $r_value;
+    }
+    
+    public function get_method() {
+        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $r_value = (isset($query_array[2])) ? $query_array[2] : "index";
+        return $r_value;
+    } 
+    
+    public function get_id() {
+        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $r_value = (isset($query_array[3])) ? $query_array[3] : "1";
+        return $r_value;
     }
     
     public function get_working_directory() {
-        $value = $_SERVER['PHP_SELF'];
-        $value = explode('/', $value);
-        unset($value[count($value)-1]);
-        $value = implode('/', $value);
-        return $value . '/';
+        $value_r = explode('/', filter_input(INPUT_SERVER,'PHP_SELF'));
+        unset($value_r[count($value_r)-1]);
+        $r_value = implode('/', $value_r);
+        return $r_value . '/';
     }
     
 }
