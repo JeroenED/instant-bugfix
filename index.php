@@ -62,27 +62,27 @@ class init {
     }
     
     public function get_controller() {
-        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $query_array = explode('/', $_SERVER['REQUEST_URI']);
         $controller = (!empty($query_array[1])) ? $query_array[1] : "page";
         $r_value = $controller . "Class";
         return $r_value;
     }
     
     public function get_method() {
-        $query = explode('?', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $query = explode('?', $_SERVER['REQUEST_URI']);
         $query_array = explode('/', $query[0]);
         $r_value = (!empty($query_array[2])) ? $query_array[2] : "index";
         return $r_value;
     } 
     
     public function get_id() {
-        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $query_array = explode('/', $_SERVER['REQUEST_URI']);
         $r_value = (!empty($query_array[3])) ? $query_array[3] : -1;
         return $r_value;
     }
     
     public function get_working_directory() {
-        $value_r = explode('/', filter_input(INPUT_SERVER,'PHP_SELF'));
+        $value_r = explode('/', $_SERVER['REQUEST_URI']);
         unset($value_r[count($value_r)-1]);
         $r_value = implode('/', $value_r);
         return $r_value . '/';

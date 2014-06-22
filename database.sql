@@ -16,9 +16,9 @@
  */
 
 
-DROP DATABASE IF EXISTS instantbugfix;
-CREATE DATABASE instantbugfix;
-USE instantbugfix;
+DROP DATABASE IF EXISTS jeroendm_ibf;
+CREATE DATABASE jeroendm_ibf;
+USE jeroendm_ibf;
 
 CREATE TABLE ibf_fixes(
 	fixID		int				NOT NULL	AUTO_INCREMENT,

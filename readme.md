@@ -1,7 +1,7 @@
 Instant Bug Fix
 =========
 
-Instant Bugfix solves all your codeproblems in one click or tab.
+Instant Bugfix solves all your codeproblems in one click or tap.
 
 Actually it's just outputting a common codeproblem like:
 
@@ -12,8 +12,8 @@ Current development state
 
 * ~~Planning~~
 * ~~Creating design~~
-* *Development*
-* Testing
+* ~~Development~~
+* *Testing*
 * Deployment
 
 Releases and notes
@@ -28,4 +28,4 @@ Use sources
 
 Credits
 ----
-* Original idea appeared on http://www.instantbugfix.com
+* Original idea on http://www.instantbugfix.com

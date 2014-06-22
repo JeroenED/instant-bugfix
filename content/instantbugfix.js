@@ -19,8 +19,6 @@ $(document).ready(function() {
 
     $(window).resize();
 
-});
-
 $(window).resize(function() {
     $('#bugfix').css({
         position: 'absolute',
@@ -30,17 +28,19 @@ $(window).resize(function() {
     });
 });
 
-$(document).click(function() {
-    history.pushState(null, "Instant Bug Fix", "/");
-    $("#page").remove();
 });
-function openAboutPage() {
+
+
+function openPage(page){
     
-    history.pushState(null, "About Me", "/page/about");
-    ibfCall("getPage?slug=about");
+    history.pushState(null, "About Me", "/page/" + page);
+    ibfCall("getPage?slug="+ page);
     
 }
-
+function closePage(){
+    history.pushState(null, "Instant Bug Fix", "/");
+    $("#page").remove();
+}
 function ibfCall(apiCall) {
     console.log("ibfCall called");
     if (typeof apiCall === undefined) return;
@@ -71,7 +71,7 @@ function parseBugfix(bugfix) {
 }
 
 function createPage(pageData) {
-    $("body").append("<div id='page'>" + pageData.content + "</div>");
+    $("body").append("<div id='page' onclick='return closePage();'>" + pageData.content + "</div>");
     $('#page').css({
         "position": 'absolute',
         "width": "640",

@@ -29,7 +29,7 @@ class apiClass {
         $array["type"] = "Bugfix";
         
         if(isset($_GET['fix'])) {
-            $array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes WHERE fixID = ? ',filter_input(INPUT_GET, 'fix') );          
+            $array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes WHERE fixID = ? ',$_GET['fix'] );          
         }else {
             $array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes ORDER BY RAND() LIMIT 1,1');
         }
@@ -39,7 +39,7 @@ class apiClass {
     
     Public Function getPage() {
         global $db;
-        $slug = filter_input(INPUT_GET, "slug");
+        $slug = $_GET['slug'];
         $array["type"] = "Page";
         $array["data"] = $db->getRecord('SELECT * '
                 . 'FROM ' . DB_PREFIX . 'revisions '
