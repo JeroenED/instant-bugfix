@@ -18,24 +18,31 @@
  */
 
 // define location of your library
-define('PATH_LIBRARY', '/home/www/htdocs/instantbugfix.local');
+//define('PATH_LIBRARY', dirname(__FILE__) . "/spoon");
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
 
 // add this to the include path
-set_include_path(get_include_path() . PATH_SEPARATOR . PATH_LIBRARY);
-
-// require spoon
+//set_include_path(get_include_path() . PATH_SEPARATOR . PATH_LIBRARY);
+// Initialize framework
 require_once 'spoon/spoon.php';
-$site = new init();
-echo "working-dir: " . $site->get_working_directory() . "<br>";
-echo "controller: " . $site->get_controller() . "<br>";
-echo "method: " . $site->get_method() . "<br>";
-echo "id: " . $site->get_id() . "<br>";
 
+// Add required shizzle
+require_once "config.php";
+require_once "controller.class.php";
+require_once "controllers.php";
+require_once "models.php";
+require_once "dbcon.php";
+
+
+
+// Let's hit the road
+$site = new init();
 
 class init {
     
     public $working_dir;
-    public $controller = "homeClass";
+    public $controller = "pageClass";
     public $method = "index";
     public $id = "0";
     
@@ -44,23 +51,33 @@ class init {
         $this->controller = $this->get_controller();
         $this->method = $this->get_method();
         $this->id = $this->get_id();
+        
+        // Hit that monster
+        $monster = new $this->controller();
+        $monster->controller = $this->controller;
+        $monster->method = $this->method;
+        $monster->id = $this->id;
+        $monster->{$this->method}();
+        
     }
     
     public function get_controller() {
         $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
-        $r_value = (isset($query_array[1])) ? $query_array[1] : "homeClass";
+        $controller = (!empty($query_array[1])) ? $query_array[1] : "page";
+        $r_value = $controller . "Class";
         return $r_value;
     }
     
     public function get_method() {
-        $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
-        $r_value = (isset($query_array[2])) ? $query_array[2] : "index";
+        $query = explode('?', filter_input(INPUT_SERVER, 'REQUEST_URI'));
+        $query_array = explode('/', $query[0]);
+        $r_value = (!empty($query_array[2])) ? $query_array[2] : "index";
         return $r_value;
     } 
     
     public function get_id() {
         $query_array = explode('/', filter_input(INPUT_SERVER, 'REQUEST_URI'));
-        $r_value = (isset($query_array[3])) ? $query_array[3] : "1";
+        $r_value = (!empty($query_array[3])) ? $query_array[3] : -1;
         return $r_value;
     }
     

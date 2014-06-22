@@ -43,4 +43,7 @@ CREATE TABLE ibf_revisions(
 	content		text			NOT NULL,
 	isCurrent	bool,
 	CONSTRAINT		revPK		PRIMARY KEY (revID)
-);	
+);
+
+INSERT INTO `ibf_revisions` (`revID`, `pageslug`, `created`, `content`, `isCurrent`) VALUES
+(1, 'about', '2014-06-21 14:32:59', '<h1>Jeroen De Meerleer - Developer</h1> <h2>Whoami</h2> <p><img src="/content/images/JeroenED.jpg" class="nomobile" style="float: right; height: 150px;"/>My name is Jeroen De Meerleer and I''m a developer. I live in Waregem, Belgium and I''m doing an evening course as Programmer/Network Engineer (I''m doing both) My hobbies are Programming and Chess (Don''t have too much expectations :-) ). When I''m not doing one of these I''m probably working on my server (VagrantBox running CentOS with lots of provisioning behind it. PHP-Development is run there too).</p> <h2>Why this website</h2> <p>I created this mini-site as a project to show employers that I can program. I already did some projects but they were not quite good, so I created a complete new project where I could do whatever I want and this is it.</p> <h2>Credits and Used sources</h2> <p><ul> <li>Original idea: instantbugfix.com (taken offline; author unknown)</li> <li><a href="http://jquery.com">jQuery</a></li> <li><a href="http://spoon-library.com/">Spoon Library</a></li> </ul>', 1);

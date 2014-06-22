@@ -49,21 +49,14 @@ a {
     position: absolute;
 }
 
-#navigation {
+#about {
     position: absolute;
     right: 5px;
     top: 5px;
     text-align: right;
     line-height: 20px;
 }
-#navcontent {
-    display: none;
-    position: absolute;
-    width: 250px;
-}
-#navcontent ul {
-    list-style: none;
-}
+
 
 #permalink {
     position: absolute;
@@ -80,6 +73,20 @@ a {
     position: absolute;
     left: 5px;
     bottom: 5px;
+}
+
+#page {
+    padding: 15px;
+}
+
+#page ul {
+    padding-left: 30px;
+}
+#page img {
+    padding: 15px;
+}
+#page h2 {
+    padding-top: 5px;
 }
 
 @media screen and (max-device-width: 480px) {
