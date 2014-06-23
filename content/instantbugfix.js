@@ -19,28 +19,30 @@ $(document).ready(function() {
 
     $(window).resize();
 
-$(window).resize(function() {
-    $('#bugfix').css({
-        position: 'absolute',
-        left: 0,
-        top: ($(window).height() - $('#bugfix').outerHeight()) / 2,
-        width: $(window).width()
+    $(window).resize(function() {
+        $('#bugfix').css({
+            position: 'absolute',
+            left: 0,
+            top: ($(window).height() - $('#bugfix').outerHeight()) / 2,
+            width: $(window).width()
+        });
     });
-});
 
 });
 
 
-function openPage(page){
-    
+function openPage(page) {
+
     history.pushState(null, "About Me", "/page/" + page);
-    ibfCall("getPage?slug="+ page);
-    
+    ibfCall("getPage?slug=" + page);
+
 }
-function closePage(){
+
+function closePage() {
     history.pushState(null, "Instant Bug Fix", "/");
     $("#page").remove();
 }
+
 function ibfCall(apiCall) {
     console.log("ibfCall called");
     if (typeof apiCall === undefined) return;
@@ -57,6 +59,7 @@ function ibfCall(apiCall) {
                 break;
             case "Page":
                 createPage(JSON.data);
+                break;
         }
 
     });
@@ -71,16 +74,8 @@ function parseBugfix(bugfix) {
 }
 
 function createPage(pageData) {
-    $("body").append("<div id='page' onclick='return closePage();'>" + pageData.content + "</div>");
-    $('#page').css({
-        "position": 'absolute',
-        "width": "640",
-        "height": "480",
-        "left": ($(window).width() - 640) / 2,
-        "top": ($(window).height() - 480) / 2,
-        "background-color": "#000000",
-        "opacity": 0
-    });
+    $("#container").append("<div id='page' onclick='return closePage();'>" + pageData.content + "</div>");
+
     $("#page").animate({
         opacity: 0.9,
     }, 100);
