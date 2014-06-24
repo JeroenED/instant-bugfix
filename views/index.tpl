@@ -19,8 +19,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <html>
 <head>
     <title>Instant Bug Fix</title>
-    <link href="/content/style.css" media="screen" rel="stylesheet" type=
-    "text/css">
+    <link href="/content/style.css" media="screen" rel="stylesheet" type="text/css">
+	<link rel="icon" type="image/png" href="/favicon.ico">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="/content/instantbugfix.js" type="text/javascript"></script>
     <meta charset="UTF-8">
