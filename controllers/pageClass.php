@@ -1,6 +1,5 @@
 <?php
-
-/*
+	/*
  * Copyright (C) 2014 Jeroen De Meerleer <me@jeroened.be>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -16,29 +15,32 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-/**
- * Description of homeClass
+	/**
+ * Description of pageClass
  *
  * @author Jeroen De Meerleer <me@jeroened.be>
  */
-class pageClass extends controller{
-    
-    public function index() {
-        $model = new page();
-        $model->apiCall[]["call"] = "getBugFix";
-        $this->create_template("index.tpl", $model);
-    }
-    
-    public function about() {
-        $model = new page();
-        $model->apiCall[]["call"] = "getBugFix";
-        $model->apiCall[]["call"] = "getPage?slug=about";
-        $this->create_template("index.tpl", $model);
-    }
-    public function fix() {
-        $model = new page();
-        $model->apiCall[]["call"] = "getBugFix?fix=" . $this->id;
-        $this->create_template("index.tpl", $model);
-    }
-}
+	class pageClass extends controller{
+		public
+		function index() {
+			$model = new page();
+			$model->apiCall[]["call"] = "getBugFix";
+			$this->create_template("index.tpl", $model);
+		}
+
+		public
+		function about() {
+			$model = new page();
+			$model->apiCall[]["call"] = "getBugFix";
+			$model->apiCall[]["call"] = "getPage?slug=about";
+			$this->create_template("index.tpl", $model);
+		}
+
+		public
+		function fix() {
+			$model = new page();
+			$model->apiCall[]["call"] = "getBugFix?fix=" . $this->id;
+			$this->create_template("index.tpl", $model);
+		}
+
+	}

@@ -20,15 +20,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <head>
     <title>Instant Bug Fix</title>
     <link href="/content/style.css" media="screen" rel="stylesheet" type="text/css">
-	<link rel="icon" type="image/png" href="/favicon.ico">
+    <link href="/favicon.ico" rel="icon" type="image/png">
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="/content/instantbugfix.js" type="text/javascript"></script>
     <meta charset="UTF-8">
     <meta content="width=device-width" name="viewport">
     <script type="text/javascript">
-        {iteration:apiCall}
-                ibfCall("{$apiCall.call}");
-            {/iteration:apiCall}
+{iteration:apiCall}
+        ibfCall("{$apiCall.call}");
+    {/iteration:apiCall}
     </script>
 </head>
 
@@ -42,20 +42,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </div>
 
     <div id="permalink">
-        <a href="#" onclick=
-        "prompt('Copy this and share the bugfix', 'http://instantbugfix.jeroened.be/page/fix/%id%');">
-        Permalink</a>
+        <a href="#" onclick="prompt('Copy this and share the bugfix', 'http://instantbugfix.jeroened.be/page/fix/%id%');">Permalink</a>
     </div>
 
     <div id="tweetthis">
-        <a href=
-        "https://twitter.com/intent/tweet?text=%fix%&amp;url=http%3A%2F%2Finstantbugfix.jeroened.be%2Fpage%2Ffix%2F%id%"
-        target="_blank">Tweet</a>
+        <a href="https://twitter.com/intent/tweet?text=%fix%&amp;url=http%3A%2F%2Finstantbugfix.jeroened.be%2Fpage%2Ffix%2F%id%" target="_blank">Tweet</a>
     </div>
 
     <div id="badge">
-        <a href="http://www.jeroened.be" target="_blank"><img alt=
-        "created by Jeroen De Meerleer" src="/content/images/jeroenED.png"></a>
+        <a href="http://www.jeroened.be" target="_blank"><img alt="created by Jeroen De Meerleer" src="/content/images/jeroenED.png"></a>
     </div>
 
     <div id="container"></div>

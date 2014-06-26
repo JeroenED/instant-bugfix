@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (C) 2014 Jeroen De Meerleer <me@jeroened.be>
  *
@@ -16,37 +15,36 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
+ 
 /**
  * Description of apiClass
  *
  * @author Jeroen De Meerleer <me@jeroened.be>
  */
-class apiClass {
-    
-    Public function getBugfix() {
-        global $db;
-        $array["type"] = "Bugfix";
-        
-        if(isset($_GET['fix'])) {
-            $array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes WHERE fixID = ? ',$_GET['fix'] );          
-        }else {
-            $array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes ORDER BY RAND() LIMIT 1,1');
-        }
-        echo json_encode($array);
-        exit;
-    }
-    
-    Public Function getPage() {
-        global $db;
-        $slug = $_GET['slug'];
-        $array["type"] = "Page";
-        $array["data"] = $db->getRecord('SELECT * '
-                . 'FROM ' . DB_PREFIX . 'revisions '
-                . 'WHERE pageslug = ? '
-                . 'AND isCurrent = 1', $slug);
-        echo json_encode($array);
-        exit;
-    }
-    
-}
+	class apiClass {
+		Public
+		function getBugfix() {
+			global $db;
+			$array["type"] = "Bugfix";
+			
+			if(isset($_GET['fix'])) {
+				$array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes WHERE fixID = ? ',$_GET['fix'] );
+			} else {
+				$array["data"] = $db->getRecord('SELECT * FROM ' . DB_PREFIX . 'fixes ORDER BY RAND() LIMIT 1,1');
+			}
+
+			echo json_encode($array);
+			exit;
+		}
+
+		Public
+		Function getPage() {
+			global $db;
+			$slug = $_GET['slug'];
+			$array["type"] = "Page";
+			$array["data"] = $db->getRecord('SELECT * '                . 'FROM ' . DB_PREFIX . 'revisions '                . 'WHERE pageslug = ? '                . 'AND isCurrent = 1', $slug);
+			echo json_encode($array);
+			exit;
+		}
+
+	}

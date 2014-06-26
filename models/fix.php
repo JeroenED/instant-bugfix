@@ -23,7 +23,7 @@
  *
  * @author Jeroen
  */
-class fix {
-    public $fixID;
-    public $fixText;
-}
+	class fix {
+		public $fixID;
+		public $fixText;
+	}

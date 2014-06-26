@@ -1,5 +1,4 @@
 <?php
-
 /*
  * Copyright (C) 2014 Jeroen De Meerleer <me@jeroened.be>
  *
@@ -16,29 +15,27 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-
-/**
+/*
  * Description of model
  *
  * @author Jeroen De Meerleer <me@jeroened.be>
  */
-class controller {
-    
-    public $id;
-    public $controller;
-    public $method;
-    
-    function create_template($template, $model) {
-        $tpl = new SpoonTemplate();
-        $tpl->setForceCompile(true);
-        $tpl->setCompileDirectory('compiled_templates');
+	class controller {
+		public $id;
+		public $controller;
+		public $method;
+		
+		function create_template($template, $model) {
+			$tpl = new SpoonTemplate();
+			$tpl->setForceCompile(true);
+			$tpl->setCompileDirectory('compiled_templates');
+			// assign some variables
+			foreach($model as $key => $value) {
+				$tpl->assign($key, $value);
+			}
 
-        // assign some variables
-        foreach($model as $key => $value) {
-            $tpl->assign($key, $value);
-        }
+			// show the output, using 'template.tpl'
+			$tpl->display("views/" . $template);
+		}
 
-        // show the output, using 'template.tpl'
-        $tpl->display("views/" . $template);
-    }
-}
+	}

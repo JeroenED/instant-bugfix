@@ -18,12 +18,10 @@
  */
 
 /**
- * Description of fixModel
+ * Description of page
  *
  * @author Jeroen De Meerleer <me@jeroened.be>
  */
-class page {
-    
-    Public $apiCall;
-    
-}
+	class page {
+		Public $apiCall;
+	}

@@ -16,9 +16,7 @@
  */
 
 $(document).ready(function() {
-
     $(window).resize();
-
     $(window).resize(function() {
         $('#bugfix').css({
             position: 'absolute',
@@ -32,10 +30,8 @@ $(document).ready(function() {
 
 
 function openPage(page) {
-
     history.pushState(null, "About Me", "/page/" + page);
     ibfCall("getPage?slug=" + page);
-
 }
 
 function closePage() {
