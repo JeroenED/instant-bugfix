@@ -13,7 +13,7 @@ Current development state
 * ~~Planning~~
 * ~~Creating design~~
 * ~~Development~~
-* *Testing*
+* ~~Testing~~
 * Deployment
 
 Releases and notes
