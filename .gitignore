@@ -217,4 +217,4 @@ pip-log.txt
 ##My Settings
 nbproject
 compiled_templates
-config.php
+*config.php
