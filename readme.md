@@ -14,12 +14,16 @@ Current development state
 * ~~Creating design~~
 * ~~Development~~
 * ~~Testing~~
-* Deployment
+* ~~Deployment~~
+
+Work finished. 
+<sub>But the best is yet to come</sub>
 
 Releases and notes
 ----
 
-*(No releases yet)*
+1.0
+* First release, huray!
 
 Use sources
 ----
