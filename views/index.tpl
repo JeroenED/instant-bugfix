@@ -34,7 +34,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 <body>
     <div id="bugfix">
-        <p>%fix%</p>
+        <p>@fix@</p>
     </div>
 
     <div id="about">
@@ -42,11 +42,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </div>
 
     <div id="permalink">
-        <a href="#" onclick="prompt('Copy this and share the bugfix', 'http://instantbugfix.jeroened.be/page/fix/%id%');">Permalink</a>
+        <a href="#" onclick="prompt('Copy this and share the bugfix', 'http://instantbugfix.jeroened.be/page/fix/@id@');">Permalink</a>
     </div>
 
     <div id="tweetthis">
-        <a href="https://twitter.com/intent/tweet?text=%fix%&amp;url=http%3A%2F%2Finstantbugfix.jeroened.be%2Fpage%2Ffix%2F%id%" target="_blank">Tweet</a>
+        <a href="https://twitter.com/intent/tweet?text=@fix@&amp;url=http%3A%2F%2Finstantbugfix.jeroened.be%2Fpage%2Ffix%2F@id@" target="_blank">Tweet</a>
     </div>
 
     <div id="badge">

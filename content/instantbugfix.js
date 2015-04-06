@@ -63,8 +63,8 @@ function ibfCall(apiCall) {
 
 function parseBugfix(bugfix) {
     dom = $("body").html();
-    dom = dom.replace(/%fix%/g, bugfix.fix);
-    dom = dom.replace(/%id%/g, bugfix.fixID);
+    dom = dom.replace(/@fix@/g, bugfix.fix);
+    dom = dom.replace(/@id@/g, bugfix.fixID);
     $("body").html(dom);
     $(window).resize();
 }
