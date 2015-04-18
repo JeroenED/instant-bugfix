@@ -26,7 +26,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 	<link href="/content/style.css" media="screen" rel="stylesheet" type="text/css">
     <link href="/favicon.ico" rel="icon" type="image/png">
     
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="/content/instantbugfix.js" type="text/javascript"></script>
 
     <script type="text/javascript">
