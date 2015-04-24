@@ -54,7 +54,10 @@ class SpoonException extends Exception
 	{
 		// parent constructor
 		parent::__construct((string) $message, (int) $code);
-
+		
+		// Set statusCode
+		http_response_code(500);
+		
 		// set name
 		$this->name = get_class($this);
 
