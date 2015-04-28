@@ -46,7 +46,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     </div>
 
     <div id="permalink">
-        <a href="#" onclick="prompt('Copy this and share the bugfix', 'http://instantbugfix.jeroened.be/page/fix/@id@');">Permalink</a>
+        <a href="#" onclick="prompt('Copy this and share the bugfix', location.protocol + '//' + location.hostname + '/page/fix/@id@');">Permalink</a>
     </div>
 
     <div id="tweetthis">
