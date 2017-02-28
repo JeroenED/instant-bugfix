@@ -110,7 +110,23 @@ a {
     padding-top:5px
 }
 
-@media screen and (max-device-width: 480px) {
+@media screen and (max-device-width: 720px) {
+#bugfix p {
+    font-size:48px
+}
+
+#page {
+    height:480px;
+    margin-top:-240px;
+    width:320px;
+    margin-left:-160px
+}
+
+.nomobile {
+    display:none;
+}
+}
+@media screen and (max-device-width: 720px) and (orientation: landscape) {
 #bugfix p {
     font-size:48px
 }
@@ -118,11 +134,11 @@ a {
 #page {
     height:320px;
     margin-top:-160px;
-    width:240px;
-    margin-left:-120px
+    width:480px;
+    margin-left:-240px
 }
 
 .nomobile {
-    display:none
+    display:none;
 }
 }
